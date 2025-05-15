@@ -1,0 +1,13 @@
+{# templates/super_admin/dashboard/index.html.twig #}
+{% extends 'super_admin_base.html.twig' %} {# We'll create this next #}
+
+{% block title %}Super Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="mt-4">Super Admin Dashboard</h1>
+    <p>Welcome, {{ app.user.userIdentifier }}!</p>
+    <p>This is the main dashboard for Super Administrators.</p>
+    {# We will add links to manage Companies and Users here later #}
+</div>
+{% endblock %}
