@@ -1,0 +1,10 @@
+{# templates/super_admin/company/new.html.twig #}
+{% extends 'super_admin/base_layout.html.twig' %}
+
+{% block title %}Create New Company{% endblock %}
+
+{% block content %}
+    <h1>Create New Company</h1>
+
+    {{ include('super_admin/company/_form.html.twig', {'button_label': 'Create Company'}) }}
+{% endblock %}

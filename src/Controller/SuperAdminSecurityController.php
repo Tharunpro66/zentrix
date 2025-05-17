@@ -12,13 +12,14 @@ class SuperAdminSecurityController extends AbstractController
     #[Route(path: '/superadmin/login', name: 'superadmin_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('superadmin_dashboard');
-        // }
+        // ---- ADD THIS ----
+        if ($this->getUser() && $this->isGranted('ROLE_SUPER_ADMIN')) {
+            $this->addFlash('info', 'You are already logged in.'); // Optional flash message
+            return $this->redirectToRoute('superadmin_dashboard');
+        }
+        // ---- END ADD ----
 
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('super_admin/security/login.html.twig', [

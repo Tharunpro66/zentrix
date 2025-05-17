@@ -1,0 +1,14 @@
+{# templates/super_admin/company/edit.html.twig #}
+{% extends 'super_admin/base_layout.html.twig' %}
+
+{% block title %}Edit Company: {{ company.name }}{% endblock %}
+
+{% block content %}
+    <h1>Edit Company: {{ company.name }}</h1>
+
+    {{ include('super_admin/company/_form.html.twig', {'button_label': 'Update Company'}) }}
+
+    {# The generated _delete_form.html.twig is for hard delete. We are using toggle. #}
+    {# If you want a hard delete, you'd uncomment and adapt the controller for it. #}
+    {# {{ include('super_admin/company/_delete_form.html.twig') }} #}
+{% endblock %}
